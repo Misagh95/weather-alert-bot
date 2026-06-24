@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: weather-alert-bot
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ADMIN_CHAT_ID
+        sync: false
+      - key: OPENWEATHER_API_KEY
+        sync: false
+      - key: CHECK_INTERVAL
+        value: 3600
+      - key: CITY
+        value: Tehran
+      - key: ALERT_RAIN
+        value: true
+      - key: ALERT_WIND
+        value: 20
